@@ -111,7 +111,8 @@ public class UyeManager extends Veritabani {
                         "=========== ŞEHİR İLE ÜYE ARAMA ==========\n" +
                         "   TC NO        İSİM - SOYİSİM - ŞEHİR - D.YILI\033[0m");
         for (Map.Entry<String, String> X : uyelerMap.entrySet()) {
-            if (X.getValue().contains(Sehir)) {
+            String [] valueParca = X.getValue().split(", ");
+            if (valueParca[2].contains(Sehir) || Sehir.equalsIgnoreCase(valueParca[2])) {
                 System.out.println(X.getKey() + " - " + X.getValue() + " | ");
                 anahtar = false;
             }
