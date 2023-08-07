@@ -228,7 +228,7 @@ public class KitapManager extends Veritabani {
     }
 
     public static void isimIleKitapSilme() throws InterruptedException {
-        System.out.println("Silinecek kitabin ismini giriniz");
+        System.out.print("Silinecek kitabin ismini giriniz");
         String silinecekKitap = Consol.nextLine();
         String silinecekValue = kitaplarMap.get(silinecekKitap);
         String sonucValue = kitaplarMap.remove(silinecekKitap);
@@ -245,7 +245,7 @@ public class KitapManager extends Veritabani {
     }
 
     public static void kitapOduncAl() throws InterruptedException {
-        System.out.println("Ödünç almak istediğiniz kitabın ismini giriniz: ");
+        System.out.print("Ödünç almak istediğiniz kitabın ismini giriniz: ");
         String kitapAdi = Consol.nextLine();
         if (!OduncMap.containsKey(kitapAdi)) {
             if (kitaplarMap.containsKey(kitapAdi)) {
@@ -262,7 +262,7 @@ public class KitapManager extends Veritabani {
 
 
     public static void kitapIadeEt() throws InterruptedException {
-        System.out.println("İade etmek istediğiniz kitabın ismini giriniz: ");
+        System.out.print("İade etmek istediğiniz kitabın ismini giriniz: ");
         String kitapAdi = Consol.nextLine();
         if (kitaplarMap.containsKey(kitapAdi) && OduncMap.containsKey(kitapAdi)) {
             System.out.println("\033[1;32m\n" + kitapAdi + " adlı kitap iade alınmıştır." + "\033[0m\n");
