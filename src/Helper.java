@@ -26,13 +26,13 @@ public class Helper {
         }
         switch (loggedInUserRole) {
             case ADMIN:
-                System.out.print("Admin olarak giriş yapıldı!\n\n");
+                System.out.print("\033[1;32mAdmin olarak giriş yapıldı!\033[0m\n\n");
                 showAdminMenu();
             case USER:
-                System.out.print("User olarak giriş yapıldı!\n\n");
+                System.out.print("\033[1;32mUser olarak giriş yapıldı!\033[0m\n\n");
                 showUserMenu();
             case GUEST:
-                System.out.print("Guest olarak giriş yapıldı!\n\n");
+                System.out.print("\033[1;32mGuest olarak giriş yapıldı!\033[0m\n\n");
                 showGuestMenu();
         }
 
@@ -91,6 +91,7 @@ public class Helper {
                     KitapManager.adminKitapMenu();
                     break;
                 case "3":
+                    System.out.println("\033[1;31mKullanıcı oturumu sonlandırıldı..\033[0m\n");
                     anaMenu();
                     break;
                 default:
@@ -120,7 +121,7 @@ public class Helper {
                 case "3":
                     UyeManager.talepleriGoruntule();
                     break;
-                case "4":
+                case "4": System.out.println("\033[1;31mKullanıcı oturumu sonlandırıldı..\033[0m\n");
                     anaMenu();
                     break;
                 default:
@@ -149,7 +150,7 @@ public class Helper {
                 case "3":
                     UyeManager.kayitTalebiGoster();
                     break;
-                case "4":
+                case "4": System.out.println("\033[1;31mKullanıcı oturumu sonlandırıldı..\033[0m\n");
                     anaMenu();
                     break;
                 default:
