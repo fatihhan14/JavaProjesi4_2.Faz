@@ -1,9 +1,6 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class UyeManager extends Veritabani {
@@ -370,13 +367,24 @@ public class UyeManager extends Veritabani {
             System.out.println();
             System.out.println("\033[1;36m\n" + "                 TALEPLER" + "\033[0m");
 
-            for (Map.Entry<String, ArrayList<String>> talep : tumTalepler.entrySet()) {
-                for (String talep2 : talep.getValue()) {
-                    System.out.println("=----------------------------------------=");
-                    System.out.println("\033[1;36mTC Numarası    : \033[0m" + talep.getKey());
-                    System.out.println(talep2);
+
+
+                for (Map.Entry<String, ArrayList<String>> talep : tumTalepler.entrySet()) {
+
+                    for (String talep2 : talep.getValue()) {
+                        System.out.println("=----------------------------------------=");
+                        System.out.println("\033[1;36mTC Numarası    : \033[0m" + talep.getKey());
+                        for (Map.Entry<String, String> X : uyelerMap.entrySet()) {
+                            if (X.getKey().equals(talep.getKey())) {
+                                String[] eachValuarr = X.getValue().split(", ");
+                                System.out.println("\033[1;36mAdı Soyadı     : \033[0m" + eachValuarr[0] + " " + eachValuarr[1]);
+                            }
+                        }
+                        System.out.println(talep2);
+                    }
                 }
-            }
+
+
         } else {
             System.out.println("\033[1;31mTALEP BULUNAMADI\033[0m");
         }
