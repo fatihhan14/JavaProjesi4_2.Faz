@@ -247,11 +247,16 @@ public class KitapManager extends Veritabani {
     public static void kitapOduncAl() throws InterruptedException {
         System.out.println("Ödünç almak istediğiniz kitabın ismini giriniz: ");
         String kitapAdi = Consol.nextLine();
-        if (kitaplarMap.containsKey(kitapAdi) && !OduncMap.containsKey(kitapAdi)) {
-            System.out.println("\033[1;32m\n" + kitapAdi + " adlı kitap ödünç olarak verilmiştir." + "\033[0m\n");
-            OduncMap.put(kitapAdi, "");
-        } else {
-            System.out.print("\033[1;42m" + "\033[1;31m" + "Belirtilen isim ile bir kitap mevcut değildir!\033[0m\n\n");
+        if (!OduncMap.containsKey(kitapAdi)) {
+            if (kitaplarMap.containsKey(kitapAdi)) {
+                System.out.println("\033[1;32m\n" + kitapAdi + " adlı kitap ödünç olarak verilmiştir." + "\033[0m\n");
+                OduncMap.put(kitapAdi, "");
+            } else {
+                System.out.print("\033[1;42m" + "\033[1;31m" + "Belirtilen isim ile bir kitap mevcut değildir!\033[0m\n\n");
+            }
+        }else {
+            System.out.print("\033[1;42m" + "\033[1;31m" +kitapAdi+ " adlı kitap daha önce ödünç alınmış!\033[0m\n" +
+                    "\033[1;42m" + "\033[1;31m" +"İade edildikten sonra ödünç alabilirsiniz.. \033[0m\n");
         }
     }
 
