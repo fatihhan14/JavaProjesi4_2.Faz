@@ -159,7 +159,7 @@ public class KitapManager extends Veritabani {
         }
         System.out.println("\n");
         if (anahtar) {
-            System.out.print("\033[1;42m" + "\033[1;31m" + "Belirtilen Yazara Ait Kitap Mevcut Değildir\033[0m\n\n");
+            System.out.print("\033[1;31m" + "Belirtilen Yazara Ait Kitap Mevcut Değildir\033[0m\n\n");
         }
     }
 
@@ -187,7 +187,7 @@ public class KitapManager extends Veritabani {
         }
         System.out.println();
         if (anahtar) {
-            System.out.print("\033[1;42m" + "\033[1;31m" + "Belirtilen bilgiler ile eşleşen bir kitap mevcut değildir\033[0m\n\n");
+            System.out.print("\033[1;31m" + "Belirtilen bilgiler ile eşleşen bir kitap mevcut değildir\033[0m\n\n");
         }
         System.out.println();
     }
@@ -204,7 +204,7 @@ public class KitapManager extends Veritabani {
                 String kTur = Consol.nextLine().toUpperCase();
                 kitapTuru = KitapTuru.valueOf(kTur);
             } catch (IllegalArgumentException e) {
-                System.out.print("\033[1;42m" + "\033[1;31m" + "Hatalı Giriş! Lütfen Kitap Türünü Tekrar Giriniz!\033[0m\n\n");
+                System.out.print("\033[1;31m" + "Hatalı Giriş! Lütfen Kitap Türünü Tekrar Giriniz!\033[0m\n\n");
             }
         }
 
@@ -216,7 +216,7 @@ public class KitapManager extends Veritabani {
                 yayinYili = Integer.parseInt(Consol.nextLine());
                 GecersizGiris = true;
             } catch (NumberFormatException e) {
-                System.out.print("\033[1;42m" + "\033[1;31m" + "Hatalı Giriş! Lütfen Sayı Giriniz!\033[0m\n\n");
+                System.out.print("\033[1;31m" + "Hatalı Giriş! Lütfen Sayı Giriniz!\033[0m\n\n");
             }
         }
         String kitapBilgileri = yazarAdi + ", " + kitapTuru + ", " + yayinYili;
@@ -238,7 +238,7 @@ public class KitapManager extends Veritabani {
         try {
             boolean sonuc = sonucValue.equals(silinecekValue);
         } catch (Exception e) {
-            System.out.print("\033[1;42m" + "\033[1;31m" + "İstediğiniz kitap ismi bulunamadı!\033[0m\n\n");
+            System.out.print("\033[1;31m" + "İstediğiniz kitap ismi bulunamadı!\033[0m\n\n");
         }
         System.out.println("\033[1;32m\nKitap Başarıyla Silindi!\033[0m\n");
     }
@@ -251,11 +251,11 @@ public class KitapManager extends Veritabani {
                 System.out.println("\033[1;32m\n" + kitapAdi + " adlı kitap ödünç olarak verilmiştir." + "\033[0m\n");
                 OduncMap.put(kitapAdi, "");
             } else {
-                System.out.print("\033[1;42m" + "\033[1;31m" + "Belirtilen isim ile bir kitap mevcut değildir!\033[0m\n\n");
+                System.out.print("\033[1;31m" + "Belirtilen isim ile bir kitap mevcut değildir!\033[0m\n\n");
             }
         }else {
-            System.out.print("\033[1;42m" + "\033[1;31m" +kitapAdi+ " adlı kitap daha önce ödünç alınmış!\033[0m\n" +
-                    "\033[1;42m" + "\033[1;31m" +"İade edildikten sonra ödünç alabilirsiniz.. \033[0m\n");
+            System.out.print("\033[1;31m" +kitapAdi+ " adlı kitap daha önce ödünç alınmış!\033[0m\n" +
+                    "\033[1;31m" +"İade edildikten sonra ödünç alabilirsiniz.. \033[0m\n");
         }
     }
 
@@ -267,7 +267,7 @@ public class KitapManager extends Veritabani {
             System.out.println("\033[1;32m\n" + kitapAdi + " adlı kitap iade alınmıştır." + "\033[0m\n");
             OduncMap.remove(kitapAdi);
         } else {
-            System.out.print("\033[1;42m" + "\033[1;31m" + "Belirtilen isim ile bir kitap mevcut değildir!\033[0m\n\n");
+            System.out.print("\033[1;31m" + "Belirtilen isim ile bir kitap mevcut değildir!\033[0m\n\n");
         }
     }
 }

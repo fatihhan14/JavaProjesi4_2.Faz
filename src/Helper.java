@@ -166,13 +166,13 @@ public class Helper {
         }
         System.out.println("\n" +
                 "\n============= TECHNO STUDY CONFLUENCE =============\n" +
-                "\t\t Kutuphane : " + Kutuphane.kutuphaneIsim +
-                "\n\t\t Adres : " + Kutuphane.adres +
-                "\n\t\t Telefon : " + Kutuphane.telefon + "\n");
+                "\t\t\u001B[1;35mKutuphane: " + Kutuphane.kutuphaneIsim +
+                "\n\t\t\u001B[1;35mAdres    : " + Kutuphane.adres +
+                "\n\t\t\u001B[1;35mTelefon  : " + Kutuphane.telefon + "\u001B[0m\n");
     }
 
     public static void projeDurdur() {
-        System.out.println("\033[1;32m\n" + "Kutuphane projesinden ciktiniz" + "\033[0m\n");
+        System.out.println("\033[1;32m\n" + "KÜTÜPHANE PROJESİNDEN ÇIKTINIZ.." + "\033[0m\n");
         System.exit(0);
     }
 }
