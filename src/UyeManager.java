@@ -295,6 +295,7 @@ public class UyeManager extends Veritabani {
                 break;
             } else {
                 System.out.println("\033[1;31m" + "HATALI TC NO ya da ÜYELİK MEVCUT DEĞİL!" + "\033[0m\n");
+                return;
             }
         }
 
