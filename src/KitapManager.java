@@ -147,7 +147,7 @@ public class KitapManager extends Veritabani {
         System.out.println("                ======== ARANAN YAZAR ========\u001B[0m");
         for (Map.Entry<String, String> X : kitaplarMap.entrySet()) {
             String [] valueParca = X.getValue().split(", ");
-            if (valueParca[1].contains(Yazar) || Yazar.equalsIgnoreCase(valueParca[1])) {
+            if (valueParca[0].contains(Yazar) || Yazar.equalsIgnoreCase(valueParca[0])) {
                 if (OduncMap.containsKey(X.getKey())) {
                     System.out.print("\033[1;31m" + "\n ÖDÜNÇ VERİLDİ " + "\033[0m");
                 } else {
