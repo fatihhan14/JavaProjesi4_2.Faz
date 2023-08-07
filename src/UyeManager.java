@@ -366,11 +366,7 @@ public class UyeManager extends Veritabani {
             }
             System.out.println();
             System.out.println("\033[1;36m\n" + "                 TALEPLER" + "\033[0m");
-
-
-
                 for (Map.Entry<String, ArrayList<String>> talep : tumTalepler.entrySet()) {
-
                     for (String talep2 : talep.getValue()) {
                         System.out.println("=----------------------------------------=");
                         System.out.println("\033[1;36mTC Numarası    : \033[0m" + talep.getKey());
@@ -383,8 +379,6 @@ public class UyeManager extends Veritabani {
                         System.out.println(talep2);
                     }
                 }
-
-
         } else {
             System.out.println("\033[1;31mTALEP BULUNAMADI\033[0m");
         }
