@@ -247,7 +247,7 @@ public class KitapManager extends Veritabani {
     public static void kitapOduncAl() throws InterruptedException {
         System.out.println("Ödünç almak istediğiniz kitabın ismini giriniz: ");
         String kitapAdi = Consol.nextLine();
-        if (kitaplarMap.containsKey(kitapAdi) || !OduncMap.containsKey(kitapAdi)) {
+        if (kitaplarMap.containsKey(kitapAdi) && !OduncMap.containsKey(kitapAdi)) {
             System.out.println("\033[1;32m\n" + kitapAdi + " adlı kitap ödünç olarak verilmiştir." + "\033[0m\n");
             OduncMap.put(kitapAdi, "");
         } else {
