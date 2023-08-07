@@ -137,7 +137,7 @@ public class KitapManager extends Veritabani {
         boolean anahtar = true;
         System.out.print("Yazar Adı: ");
         String Yazar = Consol.nextLine();
-        System.out.println("Aranıyor...");
+        System.out.print("Aranıyor...");
         for (int i = 0; i < 20; i++) {
             Thread.sleep(100);
             System.out.print(">");
@@ -146,8 +146,8 @@ public class KitapManager extends Veritabani {
         System.out.println("                \u001B[1;32m=== TECHNO STUDY CONFLUENCE ===");
         System.out.println("                ======== ARANAN YAZAR ========\u001B[0m");
         for (Map.Entry<String, String> X : kitaplarMap.entrySet()) {
-            String [] valueParca = X.getValue().split(", ");
-            if (valueParca[0].contains(Yazar) || Yazar.equalsIgnoreCase(valueParca[0])) {
+            String [] valueParca = X.getValue().toLowerCase().split(", ");
+            if (valueParca[0].contains(Yazar.toLowerCase()) || valueParca[0].equalsIgnoreCase(Yazar)) {
                 if (OduncMap.containsKey(X.getKey())) {
                     System.out.print("\033[1;31m" + "\n ÖDÜNÇ VERİLDİ " + "\033[0m");
                 } else {
@@ -205,20 +205,18 @@ public class KitapManager extends Veritabani {
                 kitapTuru = KitapTuru.valueOf(kTur);
             } catch (IllegalArgumentException e) {
                 System.out.print("\033[1;42m" + "\033[1;31m" + "Hatalı Giriş! Lütfen Kitap Türünü Tekrar Giriniz!\033[0m\n\n");
-
             }
         }
-        System.out.print("Yayın Tarihi: ");
+
         int yayinYili = 0;
         boolean GecersizGiris = false;
         while (!GecersizGiris) {
             try {
+                System.out.print("Yayın Tarihi: ");
                 yayinYili = Integer.parseInt(Consol.nextLine());
                 GecersizGiris = true;
             } catch (NumberFormatException e) {
-
                 System.out.print("\033[1;42m" + "\033[1;31m" + "Hatalı Giriş! Lütfen Sayı Giriniz!\033[0m\n\n");
-
             }
         }
         String kitapBilgileri = yazarAdi + ", " + kitapTuru + ", " + yayinYili;
@@ -228,7 +226,7 @@ public class KitapManager extends Veritabani {
     }
 
     public static void isimIleKitapSilme() throws InterruptedException {
-        System.out.print("Silinecek kitabin ismini giriniz");
+        System.out.print("Silinecek kitabin ismini giriniz: ");
         String silinecekKitap = Consol.nextLine();
         String silinecekValue = kitaplarMap.get(silinecekKitap);
         String sonucValue = kitaplarMap.remove(silinecekKitap);
@@ -242,6 +240,7 @@ public class KitapManager extends Veritabani {
         } catch (Exception e) {
             System.out.print("\033[1;42m" + "\033[1;31m" + "İstediğiniz kitap ismi bulunamadı!\033[0m\n\n");
         }
+        System.out.println("\033[1;32m\nKitap Başarıyla Silindi!\033[0m\n");
     }
 
     public static void kitapOduncAl() throws InterruptedException {

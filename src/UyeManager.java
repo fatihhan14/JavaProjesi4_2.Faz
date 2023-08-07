@@ -387,15 +387,16 @@ public class UyeManager extends Veritabani {
         while (true) {
             System.out.print("TC NO: ");
             tcNO = Consol.nextLine();
-            System.out.println("Kontrol Ediliyor...");
+            System.out.print("Kontrol Ediliyor...");
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 System.out.print(">");
             }
+            System.out.println();
             if (!intControl(tcNO)) {
-                System.out.println("\033[1;31mTC NO SADECE RAKAMLARDAN OLUŞMALIDIR\033[0m");
+                System.out.print("\033[1;31mTC NO SADECE RAKAMLARDAN OLUŞMALIDIR\033[0m\n");
             } else {
-                System.out.println("\033[1;32mTC NO KABUL EDİLDİ\033[0m");
+                System.out.print("\033[1;32mTC NO KABUL EDİLDİ\033[0m\n");
                 break;
             }
         }
@@ -403,15 +404,16 @@ public class UyeManager extends Veritabani {
         while (true) {
             System.out.print("İSİM: ");
             isim = Consol.nextLine();
-            System.out.println("Kontrol Ediliyor...");
+            System.out.print("Kontrol Ediliyor...");
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 System.out.print(">");
             }
+            System.out.println();
             if (!strControl(isim)) {
-                System.out.println("\033[1;31mİSİM RAKAM VEYA UYGUNSUZ KARAKTER İÇEREMEZ\033[0m");
+                System.out.print("\033[1;31mİSİM RAKAM VEYA UYGUNSUZ KARAKTER İÇEREMEZ\033[0m\n");
             } else {
-                System.out.println("\033[1;32mİSİM KABUL EDİLDİ\033[0m");
+                System.out.print("\033[1;32mİSİM KABUL EDİLDİ\033[0m\n");
                 break;
             }
         }
@@ -419,15 +421,16 @@ public class UyeManager extends Veritabani {
         while (true) {
             System.out.print("SOYİSİM: ");
             soyisim = Consol.nextLine();
-            System.out.println("Kontrol Ediliyor...");
+            System.out.print("Kontrol Ediliyor...");
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 System.out.print(">");
             }
+            System.out.println();
             if (!strControl(soyisim)) {
-                System.out.println("\033[1;31mSOYİSİM RAKAM VEYA UYGUNSUZ KARAKTER İÇEREMEZ\033[0m");
+                System.out.print("\033[1;31mSOYİSİM RAKAM VEYA UYGUNSUZ KARAKTER İÇEREMEZ\033[0m\n");
             } else {
-                System.out.println("\033[1;32mSOYİSİM KABUL EDİLDİ\033[0m");
+                System.out.print("\033[1;32mSOYİSİM KABUL EDİLDİ\033[0m\n");
                 break;
             }
         }
@@ -435,15 +438,16 @@ public class UyeManager extends Veritabani {
         while (true) {
             System.out.print("ŞEHİR: ");
             Sehir = Consol.nextLine();
-            System.out.println("Kontrol Ediliyor...");
+            System.out.print("Kontrol Ediliyor...");
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 System.out.print(">");
             }
+            System.out.println();
             if (!strControl(Sehir)) {
-                System.out.println("\033[1;31mŞEHİR RAKAM VEYA UYGUNSUZ KARAKTER İÇEREMEZ\033[0m");
+                System.out.print("\033[1;31mŞEHİR RAKAM VEYA UYGUNSUZ KARAKTER İÇEREMEZ\033[0m\n");
             } else {
-                System.out.println("\033[1;32mŞEHİR KABUL EDİLDİ\033[0m");
+                System.out.print("\033[1;32mŞEHİR KABUL EDİLDİ\033[0m\n");
                 break;
             }
         }
@@ -451,26 +455,28 @@ public class UyeManager extends Veritabani {
         while (true) {
             System.out.print("DOĞUM YILI: ");
             dYili = Consol.nextLine();
-            System.out.println("Kontrol Ediliyor...");
+            System.out.print("Kontrol Ediliyor...");
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 System.out.print(">");
             }
+            System.out.println();
             if (!intControl(dYili)) {
-                System.out.println("\033[1;31mDOĞUM YILI SADECE RAKAMLARDAN OLUŞMALIDIR\033[0m");
+                System.out.print("\033[1;31mDOĞUM YILI SADECE RAKAMLARDAN OLUŞMALIDIR\033[0m\n");
             } else {
-                System.out.println("\033[1;32mDOĞUM YILI KABUL EDİLDİ\033[0m");
+                System.out.print("\033[1;32mDOĞUM YILI KABUL EDİLDİ\033[0m\n");
                 break;
             }
         }
         String UyeBilgileri = isim + " , " + soyisim + " , " + Sehir + " , " + dYili;
         uyeTalepleri.put(tcNO, UyeBilgileri);
-        System.out.println("İşleniyor...");
+        System.out.print("İşleniyor...");
         for (int i = 0; i < 20; i++) {
             Thread.sleep(100);
             System.out.print(">");
         }
-        System.out.println("\033[1;32m=== ÜYE TALEBİ ALINDI ===\033[0m");
+        System.out.println();
+        System.out.println("\033[1;32m=== ÜYELİK TALEBİ ALINDI ===\033[0m\n");
     }
 
     public static void kayitTalebiGoster() throws InterruptedException {
@@ -487,7 +493,7 @@ public class UyeManager extends Veritabani {
             }
         }
         if (uyeTalepleri.containsKey(tcNo)) {
-            System.out.println("Aranıyor...");
+            System.out.print("Aranıyor...");
             for (int i = 0; i < 20; i++) {
                 Thread.sleep(100);
                 System.out.print(">");
